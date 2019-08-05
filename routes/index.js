@@ -6,7 +6,7 @@ var router = express.Router()
 //   res.render('index', { title: 'Express' })
 // })
 
-var zyhDemo = require('./moduleOne/zyhDemo')
+var zyhDemo = require('./moduleOne/zyhDemo.control')
 var dashboard = require('./moduleTwo/dashboard')
 router.use('/zyhDemo', zyhDemo)
 router.use('/dashboard', dashboard)
