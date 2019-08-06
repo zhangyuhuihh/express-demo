@@ -9,13 +9,19 @@ async function getAll(req, res) {
 }
 
 async function addOne(req, res) {
-  console.log('request=========================================================',req.body)
   await testModel.addData(req.body)
+  const dataToSend = new readyResponse.responseObj('00000', '1', '操作成功')
+  res.send(dataToSend)
+}
+
+async function deleteOne(req, res) {
+  await testModel.deleteData(req.body)
   const dataToSend = new readyResponse.responseObj('00000', '1', '操作成功')
   res.send(dataToSend)
 }
 
 module.exports = {
   getAll,
-  addOne
+  addOne,
+  deleteOne
 }

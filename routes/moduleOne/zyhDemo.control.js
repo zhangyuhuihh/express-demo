@@ -10,5 +10,6 @@ var testService = require('../../services/zyhDemo.service')
 // control--service--model,解耦传统的mvc中的control和model层
 router.get('/getAll', testService.getAll)
 router.post('/addOne', testService.addOne)
+router.delete('/deleteOne', testService.deleteOne)
 
 module.exports = router

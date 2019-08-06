@@ -20,7 +20,31 @@ function addData(data) {
   })
 }
 
+// 删
+function deleteData(data) {
+  let str = JSON.stringify(data.id)
+  const c = `(${str.slice(1, str.length - 1)})`
+  const sql = `DELETE FROM user WHERE id IN (${c})`
+  return new Promise((resolve, reject) => {
+    db.query(sql, (error, rows) => {
+      resolve(rows)
+    })
+  })
+}
+
+// 改
+function editData(data) {
+  const sql = `DELETE FROM user WHERE id IN ()`
+  return new Promise((resolve, reject) => {
+    db.query(sql, (error, rows) => {
+      resolve(rows)
+    })
+  })
+}
+
 module.exports = {
   getData,
-  addData
+  addData,
+  deleteData,
+  editData
 }
