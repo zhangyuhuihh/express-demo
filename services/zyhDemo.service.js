@@ -1,12 +1,10 @@
-var testModel = require('../models/zyhDemo.model')
+const testModel = require('../models/zyhDemo.model')
 
 // service => 接收来自control的req, res, ,拿到model返回的数据
-function getAll(req, res) {
-  const data =  testModel.getData()
+async function getAll(req, res) {
+  // 这里可以进行拿到的数据的处理
+  const data = await testModel.getData()
   res.send(data)
-  // db.query('SELECT * FROM user', (error, rows) => {
-  //   res.send(rows)
-  // })
 }
 
 module.exports = {

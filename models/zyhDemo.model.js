@@ -1,12 +1,11 @@
-var db = require('../assets/mysql/config/pool')
+const db = require('../assets/mysql/config/pool')
 
 function getData() {
-  let data = []
-  db.query('SELECT * FROM user', (error, rows) => {
-    // res.send(rows)
-    data = rows
+  return new Promise((resolve, reject) => {
+    db.query('SELECT * FROM user', (error, rows) => {
+      resolve(rows)
+    })
   })
-  return data
 }
 
 module.exports = {
